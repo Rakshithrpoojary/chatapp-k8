@@ -70,7 +70,7 @@ pipeline{
         stage("Scan docker image")
         {
             steps{
-                sh 'trivy image {AWS_ECR_REPO_NAME} > trivyimage.txt'
+                sh 'trivy image ${AWS_ECR_REPO_NAME} > trivyimage.txt'
             }
         }
         stage("Push to ecr")
