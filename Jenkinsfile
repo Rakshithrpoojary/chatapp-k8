@@ -1,13 +1,12 @@
 pipeline{
     agent {label "jenkins-agent"}
     tools{
-                nodejs "node18"
+        nodejs "node18"
     }
     environment{
         SCANNER_HOME=tool "sonar-scanner"
         AWS_FRONTEND_REPO_NAME =credentials("ECR_FRONTEND")
         REGION = "ap-south-1a"
-        REPO_URL=
     }
     stages{
         stage("cleanws")
