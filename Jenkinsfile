@@ -27,7 +27,11 @@ pipeline{
         stage("Install pakages")
         {
             steps{
+                dir('frontend')
+                {
                 sh "npm install"
+
+                }
             }
         }
         stage("Trivy scanner for dependency")
