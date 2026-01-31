@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: 050305920682.dkr.ecr.ap-south-1.amazonaws.com/ecomfront:48
+          image: 050305920682.dkr.ecr.ap-south-1.amazonaws.com/ecomfront:50
           imagePullPolicy: Always
           ports:
             - containerPort: 80
