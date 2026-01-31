@@ -2,6 +2,11 @@ services:
   backend:
     image: backend:latest
     container_name: backend
+    environment:
+      MONGODB_URI: mongodb://admin:admin123@mongodb:27017/mydatabase?authSource=admin
+      FRONTEND_URL: http://13.232.189.213
+      TOKEN_SECRET_KEY: ghfghdtdtrtrgfgfgf
+      PORT: 4000
     ports:
       - "4000:4000"
     depends_on:
