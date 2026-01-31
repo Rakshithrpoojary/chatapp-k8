@@ -1,16 +1,9 @@
-version: "3.8"
-
 services:
   backend:
     image: backend:latest
     container_name: backend
     ports:
       - "4000:4000"
-    environment:
-      MONGODB_URI: mongodb://admin:admin123@mongodb:27017/mydatabase?authSource=admin
-      TOKEN_SECRET_KEY: ghfghdtdtrtrgfgfgf
-      PORT: 4000
-      FRONTEND_URL: http://13.232.189.213
     depends_on:
       - mongodb
 

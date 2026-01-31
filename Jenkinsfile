@@ -49,7 +49,6 @@ pipeline{
         stage('build docker image'){
             steps{
                    sh  'docker system prune -f'
-                   sh  'docker container prune -f'
                    sh  'docker build --build-arg REACT_APP_CLOUD_NAME_CLOUDINARY=ecommerce --build-arg REACT_APP_BACKEND_URI=http://13.232.189.213:4000 -t frontend /frontend'
       
                    sh  'docker build -t backend backend'
@@ -66,12 +65,19 @@ pipeline{
         stage("dockercompose")
         {
             steps{
-                sh "docker compose up"
+                sh "docker compose up -d"
             }
         }        // stage("push to ecr")
         // {
         //     steps{
         //         sh "aws ecr get-login-password --region ${REGION} | docker login --username AWS --password-stdin ${REPO_URL}"
+        //         sh
+        //     }
+        // }
+    }
+
+}
+${REPO_URL}"
         //         sh
         //     }
         // }
