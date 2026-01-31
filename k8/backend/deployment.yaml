@@ -53,7 +53,7 @@ spec:
             - name: FRONTEND_URL
               valueFrom:
                 configMapKeyRef:
-                  name: backend-cm       
+                  name: backend-cm
                   key: frontend_url
           ports:
             - containerPort: 4000
