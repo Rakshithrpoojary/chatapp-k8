@@ -18,12 +18,11 @@ pipeline{
             }
         }
         stage("Checkout code"){
-            steps{
-                withCredentials([gitUsernamePassword(credentialsId: 'git-cred', gitToolName: 'Default')]) {
-                    git branch: "main",url: 'https://github.com/Rakshithrpoojary/chatapp-k8.git'
+            steps{    
+                    git branch: "main",url: 'https://github.com/Rakshithrpoojary/chatapp-k8.git',credentialsId: 'git-cred'
                 }
             }
-        }
+        
         stage("Install pakages")
         {
             steps{
