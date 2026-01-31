@@ -67,20 +67,10 @@ pipeline{
             steps{
                 sh "docker compose up -d"
             }
-        }        // stage("push to ecr")
-        // {
-        //     steps{
-        //         sh "aws ecr get-login-password --region ${REGION} | docker login --username AWS --password-stdin ${REPO_URL}"
-        //         sh
-        //     }
-        // }
+        } 
     }
 
-}
-${REPO_URL}"
-        //         sh
-        //     }
-        // }
-    }
+
+    
 
 }
