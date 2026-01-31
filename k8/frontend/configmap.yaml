@@ -4,5 +4,5 @@ metadata:
   name: backend-url
   namespace: ecommercesecond
 data:
-  React_app_backend_url: "http://k8s-ecommerc-mainlb-50fe372e3b-1026830903.ap-south-1.elb.amazonaws.com/"
+  React_app_backend_url: "http://43.205.199.75:32538"
   cloudinary_cloud_name: "dnbnsimy4"
