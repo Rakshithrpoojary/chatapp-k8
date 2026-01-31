@@ -49,7 +49,7 @@ pipeline{
         stage('build docker image'){
             steps{
                    sh  'docker system prune -f'
-                   sh  'docker build --build-arg REACT_APP_CLOUD_NAME_CLOUDINARY=ecommerce --build-arg REACT_APP_BACKEND_URI=http://13.232.189.213:4000 -t frontend frontend'
+                   sh  'docker build --build-arg REACT_APP_CLOUD_NAME_CLOUDINARY=dnbnsimy4 --build-arg REACT_APP_BACKEND_URI=http://13.232.189.213:4000 -t frontend frontend'
       
                    sh  'docker build -t backend backend'
                 
