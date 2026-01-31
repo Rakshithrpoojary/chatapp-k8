@@ -18,11 +18,12 @@ pipeline{
             }
         }
         stage("Checkout code"){
-            steps{    
+            steps{
+          
                     git branch: "main",url: 'https://github.com/Rakshithrpoojary/chatapp-k8.git',credentialsId: 'git-cred'
-                }
+                
             }
-        
+        }
         stage("Install pakages")
         {
             steps{
@@ -39,7 +40,7 @@ pipeline{
         {
             steps{
                 dir("frontend"){
-                withSonarQubeEnv("sonar-cred")
+                withSonarQubeEnv("sonar-cred-main")
                 {
                  sh ''' $SONAR_HOME/bin/sonar-scanner \
                  -Dsonar.projectName="ecommercesecond" \
