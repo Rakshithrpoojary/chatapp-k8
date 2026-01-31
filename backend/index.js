@@ -5,6 +5,9 @@ require('dotenv').config()
 const connectDB = require('./config/db')
 const router = require('./routes')
 console.log("url",process.env.FRONTEND_URL);
+console.log("TOKEN_SECRET_KEY",process.env.TOKEN_SECRET_KEY);
+
+
 
 const app = express()
 app.use(cors({

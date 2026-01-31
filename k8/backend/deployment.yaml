@@ -28,12 +28,12 @@ spec:
             - name: MONGODB_URI
               valueFrom:
                 configMapKeyRef:
-                  name: backend-cm    
+                  name: backend-cm
                   key: mongo_url
             - name: PORT
               valueFrom:
                 configMapKeyRef:
-                  name: backend-cm       
+                  name: backend-cm   
                   key: port
             - name: TOKEN_SECRET_KEY
               valueFrom:
