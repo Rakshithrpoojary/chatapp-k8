@@ -66,7 +66,7 @@ pipeline{
         stage("dockercompose")
         {
             steps{
-                sh "docker compose up ."
+                sh "docker compose up -d"
             }
         }        // stage("push to ecr")
         // {
