@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Secret
+metadata: 
+  namespace: ecommercesecond
+  name: mongo-sec
+type: Opaque
+data:
+  password: YWRtaW4xMjMK
+  username: YWRtaW4=
