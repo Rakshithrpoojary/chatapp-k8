@@ -4,10 +4,6 @@ const cookieParser = require('cookie-parser')
 require('dotenv').config()
 const connectDB = require('./config/db')
 const router = require('./routes')
-<<<<<<< HEAD
-=======
-
->>>>>>> 77dc60f1520d1d66c69e92fd38b4573e587f8040
 console.log("url",process.env.FRONTEND_URL);
 
 const app = express()
