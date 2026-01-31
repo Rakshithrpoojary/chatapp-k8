@@ -6,4 +6,4 @@ metadata:
 data:
   mongo_url: "mongodb://mongodb-svc:27017/ecommerce"
   port: "4000"
-  frontend_url: "http://43.205.199.75"
+  frontend_url: "http://43.205.199.75:31848"
