@@ -1,5 +1,5 @@
 const backendDomin = process.env.REACT_APP_BACKEND_URI
-
+console.log("bb",process.env.REACT_APP_BACKEND_URI);
 const SummaryApi = {
     signUP : {
         url : `${backendDomin}/api/signup`,
