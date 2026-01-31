@@ -1,4 +1,4 @@
-const backendDomin = Process.env.REACT_APP_BACKEND_URI
+const backendDomin = process.env.REACT_APP_BACKEND_URI
 
 const SummaryApi = {
     signUP : {
