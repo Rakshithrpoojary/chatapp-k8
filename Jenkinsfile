@@ -48,7 +48,7 @@ pipeline{
                 {
                  sh ''' $SCANNER_HOME/bin/sonar-scanner \
                  -Dsonar.projectName="ecommercesecond" \
-                 -Dsonar.projectKey =""ecommercesecond
+                 -Dsonar.projectKey="ecommercesecond"
                  '''   
                 }
                 }
