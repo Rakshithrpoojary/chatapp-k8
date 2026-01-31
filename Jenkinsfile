@@ -49,10 +49,10 @@ pipeline{
         stage('build docker image'){
             steps{
                    sh  'docker system prune -f'
-                   sh  'docker system container -f'
+                   sh  'docker container prune -f'
                    sh  'docker build --build-arg REACT_APP_CLOUD_NAME_CLOUDINARY=ecommerce --build-arg REACT_APP_BACKEND_URI=http://13.232.189.213:4000 -t frontend /frontend'
       
-                   sh  'docker build --build-arg FRONTEND_URL=http://13.232.189.213 --build-arg PORT=4000 --build-arg TOKEN_SECRET_KEY=ajfaghajajjaf --build-arg MONGODB_URI: mongodb://admin:admin123@mongodb:27017/mydatabase?authSource=admin  -t backend /backend'
+                   sh  'docker build -t backend backend'
                 
             }
         }
