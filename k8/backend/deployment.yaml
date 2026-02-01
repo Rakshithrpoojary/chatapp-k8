@@ -50,10 +50,5 @@ spec:
                 secretKeyRef:
                   name: mongo-sec
                   key: password
-            - name: FRONTEND_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: backend-cm
-                  key: frontend_url
           ports:
             - containerPort: 4000

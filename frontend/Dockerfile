@@ -5,7 +5,7 @@ COPY package*.json .
 
 RUN npm ci --omit=dev
 COPY . .
-ENV REACT_APP_BACKEND_URI=http://43.205.199.75:32538
+ENV REACT_APP_BACKEND_URI=http://k8s-ecommerc-mainlb-7952d971ab-643844860.ap-south-1.elb.amazonaws.com
 ENV REACT_APP_CLOUD_NAME_CLOUDINARY=dnbnsimy4
 RUN npm run build
 
