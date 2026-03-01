@@ -5,7 +5,7 @@ Full Stack E-Commerce MERN
 
 ![Alt text](Full%20Stack%20E-Commerce%20MERN%20App.png?raw=true "Title")
 
-Backend .env fil 
+Backend .env fils
 
 MONGODB_URI =
 TOKEN_SECRET_KEY = 
