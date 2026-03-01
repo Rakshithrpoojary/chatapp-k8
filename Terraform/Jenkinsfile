@@ -1,48 +1,53 @@
-pipeline{
+pipeline {
     agent any
-   environment{
-    AWS_ACCESS_KEY=credentials('access-key')
-    AWS_SECRET_KEY=credentials('secret-key')
-   }
-    stages{
-        
-    
-    stage('init'){
-   steps {
-    dir('Terraform')
-    {
-    sh 'terraform init -input=false'
 
+    environment {
+        AWS_ACCESS_KEY_ID     = credentials('access-key')
+        AWS_SECRET_ACCESS_KEY = credentials('secret-key')
+        AWS_DEFAULT_REGION    = 'us-east-1'
     }
-  }
+
+    parameters {
+        choice(
+            name: 'TF_ACTION',
+            choices: ['Apply', 'Destroy', 'Skip'],
+            description: 'Select Terraform action'
+        )
     }
-   
 
+    stages {
+        stage('Terraform Init') {
+            steps {
+                dir('Terraform') {
+                    sh 'terraform init -input=false'
+                }
+            }
+        }
 
-stage('Terraform Plan') {
-  steps {
-    dir('Terraform')
-    {
-    sh 'terraform plan -out=tfplan'
+        stage('Terraform Plan') {
+            steps {
+                dir('Terraform') {
+                    sh 'terraform plan -var-file=terraform.tfvars -out=tfplan'
+                }
+            }
+        }
 
-    }
-  }
-}
-
-stage('Approval') {
-  steps {
-    input message: 'Review plan. Proceed to apply?'
-  }
-}
-
-stage('Terraform Apply') {
-  steps {
-    dir('Terraform')
-    {
-    sh 'terraform apply tfplan'
-
-    }
-  }
-}
+        stage('Terraform Execute') {
+            steps {
+                script {
+                    if (params.TF_ACTION == 'Apply') {
+                        dir('Terraform') {
+                            sh 'terraform apply -auto-approve tfplan'
+                        }
+                    } else if (params.TF_ACTION == 'Destroy') {
+                        dir('Terraform') {
+                            sh 'terraform destroy -auto-approve'
+                        }
+                    } else {
+                        echo "Skipping Terraform actions as per choice"
+                    }
+                }
+            }
+        }
     }
 }
