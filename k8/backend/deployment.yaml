@@ -24,31 +24,5 @@ spec:
         - name: backend
           image: 050305920682.dkr.ecr.ap-south-1.amazonaws.com/ecommbackend:9
           imagePullPolicy: Always
-          env:
-            - name: MONGODB_URI
-              valueFrom:
-                configMapKeyRef:
-                  name: backend-cm
-                  key: mongo_url
-            - name: PORT
-              valueFrom:
-                configMapKeyRef:
-                  name: backend-cm   
-                  key: port
-            - name: TOKEN_SECRET_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: backend-sec
-                  key: jwtsecreat
-            - name: MONGO_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: mongo-sec
-                  key: username
-            - name: MONGO_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mongo-sec
-                  key: password
           ports:
             - containerPort: 4000

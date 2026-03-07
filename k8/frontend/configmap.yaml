@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: backend-url
-  namespace: ecommercesecond
-data:
-  React_app_backend_url: "http://43.205.199.75:32538"
-  cloudinary_cloud_name: "dnbnsimy4"
