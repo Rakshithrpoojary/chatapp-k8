@@ -1,3 +1,5 @@
+const fs = require("fs");
+const JWTSECRETS =fs.readFileSync("/mnt/secrets/JWTSECRETS","utf8").trim();
 const bcrypt = require('bcryptjs')
 const userModel = require('../../models/userModel')
 const jwt = require('jsonwebtoken');
@@ -28,7 +30,7 @@ async function userSignInController(req,res){
             _id : user._id,
             email : user.email,
         }
-        const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET_KEY, { expiresIn: 60 * 60 * 8 });
+        const token = await jwt.sign(tokenData, JWTSECRETS, { expiresIn: 60 * 60 * 8 });
 
         const tokenOption = {
             httpOnly : true,

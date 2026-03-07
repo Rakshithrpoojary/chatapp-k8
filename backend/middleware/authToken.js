@@ -1,3 +1,5 @@
+const fs = require("fs");
+const JWTSECRETS =fs.readFileSync("/mnt/secrets/JWTSECRETS","utf8").trim();
 const jwt = require('jsonwebtoken')
 
 async function authToken(req,res,next){
@@ -13,7 +15,7 @@ async function authToken(req,res,next){
             })
         }
 
-        jwt.verify(token, process.env.TOKEN_SECRET_KEY, function(err, decoded) {
+        jwt.verify(token, JWTSECRETS, function(err, decoded) {
             console.log(err)
             console.log("decoded",decoded)
             
