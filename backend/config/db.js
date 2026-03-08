@@ -1,5 +1,5 @@
 const fs = require("fs");
-const mongouri =fs.readFileSync("/mnt/secrets/MONGODB_URI","utf8").trim();
+const mongouri =fs.readFileSync("/mnt/secrets/MONGODB_URII","utf8").trim();
 const mongoose = require("mongoose")
 console.log("MONGOURI",mongouri)
 
