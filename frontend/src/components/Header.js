@@ -62,7 +62,7 @@ const Header = () => {
             </div>
 
             <div className='hidden lg:flex items-center w-full justify-between max-w-sm border rounded-full focus-within:shadow pl-2'>
-                <input type='text' placeholder='Find Rakshith and Ranjith here...' className='w-full outline-none' onChange={handleSearch} value={search}/>
+                <input type='text' placeholder='Ingress and Ranjith here...' className='w-full outline-none' onChange={handleSearch} value={search}/>
                 <div className='text-lg min-w-[50px] h-8 bg-red-600 flex items-center justify-center rounded-r-full text-white'>
                   <GrSearch />
                 </div>
