@@ -11,7 +11,7 @@ env:
   AWS_DEFAULT_REGION: ap-south-1
   AWS_ECR_REPO_NAME: ${{ secrets.ECR_REPO1 }}
   AWS_ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
-  REPOSITORY_URI: ${{ secrets.ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_DEFAULT_REGION }}.amazonaws.com
+  REPOSITORY_URI: ${{ secrets.ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com
 
 jobs:
   frontend-ci:
