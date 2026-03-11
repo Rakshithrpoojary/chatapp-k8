@@ -1,0 +1,30 @@
+name: "Frontend"
+
+on:
+  push:
+    branches: 'main'
+
+job:
+  firstjob:
+    runs_on: "ubuntu-latest"
+
+  steps:
+    name: chekout
+    used: action@checkout
+
+    name: Install dependencies
+    used: action@nodejs
+    with:
+      version: 22
+    run: npm install
+
+    name: Scan dependecies
+    used: action@trivy
+    run: trivy fs . > trivydep.txt
+
+    name: Sonar Scan
+    used: action@sonar
+    Run ''
+
+    
+
